@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Big Environment/3D Virtual Shop Vol 2/BigEnvironment.unity
+    guid: 8db8ad0385d094835acab8432953987c
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: da3bedf0bdde04c4fa63cee44e60cdff, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1d0469722039c704b82ea25752d310d6, type: 2}

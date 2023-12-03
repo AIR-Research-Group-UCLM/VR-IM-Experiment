@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8833489778718110718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c2918ba0e7451694416d42d69e0944, type: 3}
+  m_Name: WitComposerData
+  m_EditorClassIdentifier: 
+  canvases: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5a46bda3295124c99b0e6537ac7252, type: 3}
+  m_Name: VoiceSDKSettings
+  m_EditorClassIdentifier: 
+  _clientAccessToken: 5YWCAALRNEGGTLUZXPAW7ZSDXA2DNHNI
+  _appInfo:
+    name: experimentos_diciembre_2024
+    id: 1810983882652406
+    lang: es
+    isPrivate: 1
+    createdAt: 2023-11-29T22:51:03-0800
+    trainingStatus: 1
+    lastTrainDuration: 59
+    lastTrainedAt: 2023-11-29T23:14:56-0800
+    nextTrainAt: 2023-11-29T23:13:57-0800
+    intents:
+    - id: 840916134444900
+      name: abrir_carrito
+      entities:
+      - name: accion:accion
+        id: 1679695045874260
+    - id: 1261559085237002
+      name: buscar_producto
+      entities:
+      - name: producto:producto
+        id: 911499420314985
+    - id: 1028614985040714
+      name: cerrar_carrito
+      entities:
+      - name: accion:accion
+        id: 1679695045874260
+    entities:
+    - name: accion
+      id: 1052958605902809
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: accion
+        id: 1679695045874260
+      keywords:
+      - keyword: abrir
+        synonyms:
+        - abrir
+      - keyword: cerrar
+        synonyms:
+        - cerrar
+    - name: carrito
+      id: 903641727438255
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: carrito
+        id: 885960439794998
+      keywords: []
+    - name: producto
+      id: 1037728300603419
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: producto
+        id: 911499420314985
+      keywords:
+      - keyword: peluche pulpo
+        synonyms:
+        - peluche pulpo
+      - keyword: portatil
+        synonyms:
+        - portatil
+      - keyword: quemador
+        synonyms:
+        - quemador
+      - keyword: suvenir
+        synonyms:
+        - suvenir
+      - keyword: taza
+        synonyms:
+        - taza
+      - keyword: zapatillas
+        synonyms:
+        - zapatillas
+    traits: []
+    versionTags: []
+    voices: []
+  _configData:
+  - {fileID: -8833489778718110718}
+  _configurationId: ac58fcc4-d3ce-4354-a87e-ae8b7b2166d6
+  timeoutMS: 10000
+  endpointConfiguration:
+    _uriScheme: 
+    _authority: 
+    _port: 0
+    _witApiVersion: 
+    _message: 
+    _speech: 
+    _dictation: 
+    _synthesize: 
+    _event: 
+    _converse: 
+  isDemoOnly: 0
+  useConduit: 1
+  _manifestLocalPath: ConduitManifest-5b9ba72e-fab1-46fa-b1d5-d5b53a23f240.json
+  excludedAssemblies:
+  - Oculus.Voice.Demo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Meta.WitAi.Samples, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  relaxedResolution: 0
