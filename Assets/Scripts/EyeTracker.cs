@@ -19,17 +19,20 @@ public class EyeTracker : MonoBehaviour
     [SerializeField]
     private Color rayColorHover = Color.blue;
 
+
     private List<EyeInteractable> eyeInteractables = new List<EyeInteractable>();
 
     private float timer = 0f;
 
     private void FixedUpdate()
     {
+
         RaycastHit hit;
 
         Vector3 raycastDirection = transform.TransformDirection(Vector3.forward) * rayDistance;
+        Debug.DrawRay(transform.parent.position, raycastDirection, Color.green);
 
-        if (Physics.Raycast(transform.position, raycastDirection, out hit, Mathf.Infinity, layersToInclude))
+        if (Physics.Raycast(transform.parent.position, raycastDirection, out hit, Mathf.Infinity, layersToInclude))
         {
             // If something is already selected, unselect it first
             UnSelect();

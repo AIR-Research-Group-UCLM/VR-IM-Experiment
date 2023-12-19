@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class TeleportDataManager : MonoBehaviour
 {
@@ -9,10 +10,20 @@ public class TeleportDataManager : MonoBehaviour
     private float batchTimer = 42.0f;
     private string filePath;
     private static bool headerWritten = false;
-
+    
+    public string directoryName = "default";
     void Start()
     {
-        filePath = Path.Combine(Application.persistentDataPath, "TeleportData.csv");
+        string path = Path.Combine(Application.persistentDataPath, directoryName);
+
+        if (!Directory.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        string fileName = "TeleportData" + sceneName + ".csv";
+        filePath = Path.Combine(path, fileName);
         StartCoroutine(BatchSaveCoroutine());
         if (!headerWritten)
         {

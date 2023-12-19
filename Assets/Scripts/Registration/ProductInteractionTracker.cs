@@ -26,10 +26,20 @@ public class ProductInteractionTracker : MonoBehaviour
                 interactions[gameObject] = Time.time;   
             
             float timestamp = Time.time;
+            string data;
+            if (interactionType == null)
+            {
+                data = $"{Time.time}, {gameObject.name}, {null}, {transform.position.x}, {transform.position.y}, " +
+                              $"{transform.position.z}, {transform.rotation.x}, {transform.rotation.y}, " +
+                              $"{transform.rotation.z}, {transform.localScale.x}, {transform.localScale.y}, {transform.localScale.z}";
+            }
+            else
+            {
+                data = $"{Time.time}, {gameObject.name}, {interactionType.ToString()}, {transform.position.x}, {transform.position.y}, " +
+                              $"{transform.position.z}, {transform.rotation.x}, {transform.rotation.y}, " +
+                              $"{transform.rotation.z}, {transform.localScale.x}, {transform.localScale.y}, {transform.localScale.z}";
+            }
             
-            string data = $"{Time.time}, {gameObject.name}, {interactionType.ToString()}, {transform.position.x}, {transform.position.y}, " +
-                          $"{transform.position.z}, {transform.rotation.x}, {transform.rotation.y}, " +
-                          $"{transform.rotation.z}, {transform.localScale.x}, {transform.localScale.y}, {transform.localScale.z}";
             dataManager.AddProductInteractionData(data);
         }
         else

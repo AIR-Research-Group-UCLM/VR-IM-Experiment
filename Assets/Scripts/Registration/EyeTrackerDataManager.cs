@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Text;
+using UnityEngine.SceneManagement;
 
 public class EyeTrackerDataManager : MonoBehaviour
 {
@@ -11,9 +12,20 @@ public class EyeTrackerDataManager : MonoBehaviour
     private string filePath;
     private static bool headerWritten = false;
 
+    public string directoryName = "default";
+
     void Start()
     {
-        filePath = Path.Combine(Application.persistentDataPath, "EyeTrackerData.csv");
+        string path = Path.Combine(Application.persistentDataPath, directoryName);
+
+        if (!Directory.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        string fileName = "EteTrackerData" + sceneName + ".csv";
+        filePath = Path.Combine(path, fileName);
         StartCoroutine(BatchSaveCoroutine());
         if (!headerWritten)
         {
@@ -54,7 +66,10 @@ public class EyeTrackerDataManager : MonoBehaviour
         {
             using (StreamWriter writer = new StreamWriter(filePath, true))
             {
-                writer.WriteLine("Timestamp, Object Name, Section, Collision Duration");
+                writer.WriteLine("Timestamp, Object Name, Section, Collision Duration, EyeLeftPosition_x, " +
+                                 "EyeLeftPosition_y, EyeLeftPosition_z, EyeLeftRotation_x, EyeLeftRotation_y, " +
+                                 "EyeLeftRotation_z, EyeRightPosition_x, EyeRightPosition_y, EyeRightPosition_z," +
+                                 "EyeRightRotation_x, EyeRightRotation_y, EyeRightRotation_z");
             }
         }
     }

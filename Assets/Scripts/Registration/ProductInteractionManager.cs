@@ -2,17 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class ProductInteractionManager : MonoBehaviour
 {
     private List<string> batchData = new List<string>();
-    private float batchTimer = 2.0f;
+    private float batchTimer = 8.0f;
     private string filePath;
     private static bool headerWritten = false;
-
+    public string directoryName = "default";
     void Start()
     {
-        filePath = Path.Combine(Application.persistentDataPath, "ProductInteractionData.csv");
+        
+        string path = Path.Combine(Application.persistentDataPath, directoryName);
+
+        if (!Directory.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        string fileName = "ProductInteractionData" + sceneName + ".csv";
+        filePath = Path.Combine(path, fileName);
         StartCoroutine(BatchSaveCoroutine());
         if (!headerWritten)
         {
