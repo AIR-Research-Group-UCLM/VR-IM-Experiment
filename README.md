@@ -7,7 +7,7 @@
 
 <a id="item-one"></a>
 ## Abstract
-
+Within the e-commerce field, disruptive technologies such as Virtual Reality (VR) are beginning to be used more frequently to explore new forms of human-computer interaction in the field and enhance the shopping experience for users. Key to this are the increasingly accurate hands-free interaction mechanisms that the user can employ to interact with virtual products and the environment. In addition, these products must be sufficiently realistic to be attractive to the user to initiate these interactions. This study presents an experiment with a set of participants that will address: (1) the impact of presenting realistic 3D models, (2) users’ evaluation of a set of pre-formalised interaction mechanisms, (3) preference for a large-scale or small-scale shopping environment and how the degree of usability while navigating the large-scale one, and (4) the usefulness of monitoring user activity to infer user preferences. The results provided show i) a high level of realism with low-cost digitization technologies, ii) interaction mechanisms realized with users’ hands are fluid and natural, iii) high usability in small and large shopping spaces, iv) finally, the recorded interaction can be employed for user profiling that improves future shopping experience
 
  
 <a id="item-two"></a>
