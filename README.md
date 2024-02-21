@@ -4,12 +4,63 @@
  - [Abstract](#item-one)
  - [CSV files structure](#item-two)
  - [Post-experiment questionnaire](#item-three)
+ - [Mathematical representation of some variables in the formalization](#Mathematical-representation-of-some-variables-in-the-formalization)
 
 <a id="item-one"></a>
 ## Abstract
 Within the e-commerce field, disruptive technologies such as Virtual Reality (VR) are beginning to be used more frequently to explore new forms of human-computer interaction in the field and enhance the shopping experience for users. Key to this are the increasingly accurate hands-free interaction mechanisms that the user can employ to interact with virtual products and the environment. In addition, these products must be sufficiently realistic to be attractive to the user to initiate these interactions. This study presents an experiment with a set of participants that will address: (1) the impact of presenting realistic 3D models, (2) users’ evaluation of a set of pre-formalised interaction mechanisms, (3) preference for a large-scale or small-scale shopping environment and how the degree of usability while navigating the large-scale one, and (4) the usefulness of monitoring user activity to infer user preferences. The results provided show i) a high level of realism with low-cost digitization technologies, ii) interaction mechanisms realized with users’ hands are fluid and natural, iii) high usability in small and large shopping spaces, iv) finally, the recorded interaction can be employed for user profiling that improves future shopping experience
 
- 
+## Mathematical representation of some variables in the formalization
+
+For **translating** interaction: 
+
+```math
+\Delta Tr = \begin{bmatrix}
+r_{11} & r_{12} & r_{13} & \Delta p_x \text{ (or } \Delta s_x\text{)} \\
+r_{21} & r_{22} & r_{23} & \Delta p_y \text{ (or } \Delta s_y\text{)} \\
+r_{31} & r_{32} & r_{33} & \Delta p_z \text{ (or } \Delta s_z\text{)} \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+```
+
+For **rotating** interaction. The first three matrices represent the rotation matrix for each of the axis indicated (X,Y,Z), and the last one is the final product of the rotation matrices:
+
+```math
+% Matriz de rotación alrededor del eje X
+R_x(\theta_x) = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & \cos(\theta_x) & -\sin(\theta_x) \\
+0 & \sin(\theta_x) & \cos(\theta_x)
+\end{bmatrix}
+
+% Matriz de rotación alrededor del eje Y
+R_y(\theta_y) = \begin{bmatrix}
+\cos(\theta_y) & 0 & \sin(\theta_y) \\
+0 & 1 & 0 \\
+-\sin(\theta_y) & 0 & \cos(\theta_y)
+\end{bmatrix}
+
+% Matriz de rotación alrededor del eje Z
+R_z(\theta_z) = \begin{bmatrix}
+\cos(\theta_z) & -\sin(\theta_z) & 0 \\
+\sin(\theta_z) & \cos(\theta_z) & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+
+% Producto final de las matrices de rotación
+\Delta Tr = R_z(\theta_z) \cdot R_y(\theta_y) \cdot R_x(\theta_x)
+```
+
+For **scaling** interaction: 
+```math
+\Delta Tr = \begin{bmatrix}
+d_x & 0 & 0 & 0 \\
+0 & d_y & 0 & 0 \\
+0 & 0 & d_z & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+```
+
 <a id="item-two"></a>
 ## CSV files structure
 The headers of the files under the "csvFiles" directory are listed below:
